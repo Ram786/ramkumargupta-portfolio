@@ -309,9 +309,9 @@ export default function Page() {
           <Card title="Consistency vs Availability (Payments)"><ul className="list-disc list-inside text-sm space-y-1">
             <li><strong>Problem:</strong> Duplicate payment attempts under retry storms.</li>
             <li><strong>Action:</strong> Chose CP path + idempotency keys + exactly-once-like orchestration.</li>
-            <li><strong>Result:</strong> Charge duplicates -> 0; p95 auth latency 220ms; error rate 0.2%.</li>
+            <li><strong>Result:</strong> Charge duplicates → 0; p95 auth latency 220ms; error rate 0.2%.</li>
           </ul></Card>
-          <Card title="FinOps Hotspot -> Unit Economics"><ul className="list-disc list-inside text-sm space-y-1">
+          <Card title="FinOps Hotspot → Unit Economics"><ul className="list-disc list-inside text-sm space-y-1">
             <li><strong>Problem:</strong> LLM endpoint cost spikes during peak traffic.</li>
             <li><strong>Action:</strong> Prompt compression + caching + model routing + autoscaling.</li>
             <li><strong>Result:</strong> Cost/request down 48% with stable p95 and quality.</li>
