@@ -6,7 +6,9 @@ import ThemeToggle from '../components/theme-toggle';
 import TiltCard from '../components/tilt-card';
 import CommandMenu from '../components/command-menu';
 
-const Section = ({ id, title, subtitle, children }:{ id:string; title:string; subtitle?:string; children:React.ReactNode }) => (
+const Section = ({ id, title, subtitle, children }: {
+  id: string; title: string; subtitle?: React.ReactNode; children: React.ReactNode
+}) => (
   <section id={id} className="scroll-mt-24 py-14 sm:py-16">
     <div className="mx-auto max-w-7xl px-4">
       <div className="mb-8 sm:mb-10">
@@ -17,8 +19,8 @@ const Section = ({ id, title, subtitle, children }:{ id:string; title:string; su
     </div>
   </section>
 );
-const Badge = ({ children }:{ children:React.ReactNode }) => (<span className="inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-medium">{children}</span>);
-const Stat = ({ icon: Icon, label, value }:{ icon:any; label:string; value:string }) => (
+const Badge = ({ children }: { children: React.ReactNode }) => (<span className="inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-medium">{children}</span>);
+const Stat = ({ icon: Icon, label, value }: { icon: any; label: string; value: string }) => (
   <div className="rounded-2xl border p-5 shadow-sm bg-white/50 dark:bg-white/5 backdrop-blur">
     <div className="flex items-center gap-3">
       <div className="rounded-xl p-2 border"><Icon className="h-5 w-5" /></div>
@@ -26,7 +28,7 @@ const Stat = ({ icon: Icon, label, value }:{ icon:any; label:string; value:strin
     </div>
   </div>
 );
-const Card = ({ title, children, right, icon: Icon }:{ title:string; children:React.ReactNode; right?:React.ReactNode; icon?:any }) => (
+const Card = ({ title, children, right, icon: Icon }: { title: string; children: React.ReactNode; right?: React.ReactNode; icon?: any }) => (
   <div className="rounded-2xl border p-6 shadow-sm bg-white/60 dark:bg-white/5 backdrop-blur hover:shadow-md transition-shadow">
     <div className="flex items-start justify-between gap-4 mb-3">
       <div className="flex items-center gap-3">
@@ -53,16 +55,16 @@ const NAV = [
   { href: '#contact', label: 'Contact' },
 ];
 const projects = [
-  { title: 'RAG Service (E2E)', description: 'Production-ready retrieval-augmented generation over product docs with evals, caching, and cost/latency panels.', highlights: ['pgvector + hybrid search','RAG evals pipeline','Prompt-injection tests','OTel traces end-to-end'], tags: ['AI','RAG','pgvector','OpenTelemetry','Security'], repo: 'https://github.com/Ram786/rag-service', demo: '#' },
-  { title: 'AI Guardrails Lab', description: 'OWASP LLM Top-10 demo with toggleable mitigations: injection isolation, output validation, PII redaction.', highlights: ['Red teaming harness','Policy & content filters','Audit logs'], tags: ['LLM Security','OWASP','Policies'], repo: 'https://github.com/Ram786', demo: '#' },
-  { title: 'Order Orchestrator (Idempotent)', description: 'EventBridge + Step Functions + SQS orchestration for preorder workflow with idempotency, retries, DLQ, and circuit breaker.', highlights: ['Exactly-once-like semantics','Compensation steps','Chaos tests'], tags: ['AWS','EventBridge','StepFunctions','Resilience'], repo: 'https://github.com/Ram786/order-orchestrator', demo: '#' },
-  { title: 'Observability Golden Path', description: 'Drop-in template wiring logs, metrics, and traces across Next.js + Node + DB. One golden dashboard per service.', highlights: ['p95/p99 SLOs','Trace-based alerts','Service map'], tags: ['OpenTelemetry','Grafana','SLO'], repo: 'https://github.com/Ram786/otel-starter', demo: '#' },
-  { title: 'IDP Service Template', description: 'Create-a-service generator with CI/CD, Terraform modules, SLOs, security checks, and cost budgets by default.', highlights: ['Backstage catalog','Golden paths','Policy as code'], tags: ['Platform','Terraform','Backstage','CI/CD'], repo: 'https://github.com/Ram786/idp-template', demo: '#' },
-  { title: 'FinOps Scorecard', description: 'Unit economics for services: request-level cost (tokens + infra), autoscaling, and Savings Plans recommendations.', highlights: ['Right-sizing','Load tests (k6)','Waste reduction'], tags: ['FinOps','k6','Autoscaling'], repo: 'https://github.com/Ram786/finops-scorecard', demo: '#' },
-  { title: 'Feature Flags & Experiments', description: 'Multi-tenant feature flag service with SDK, audit trail, and staged rollouts/canaries for safe experimentation.', highlights: ['Global cache','Rollout policies','Tenancy'], tags: ['Platform','Flags','Experiments'], repo: 'https://github.com/Ram786/flags', demo: '#' },
-  { title: 'Search-at-Scale', description: 'Hybrid semantic + BM25 search across ~1M synthetic docs with sharding, query routing, and warm caches.', highlights: ['Consistent hashing','Shard balancer','Perf budgets'], tags: ['Search','Sharding','Scaling'], repo: 'https://github.com/Ram786/search-at-scale', demo: '#' },
-  { title: 'Secure Data Boundary Gateway', description: 'Upload -> scan (DLP/AV) -> store -> signed URLs with PII redaction and strict tenancy boundaries.', highlights: ['Least-privilege IAM','Egress controls','Audit trails'], tags: ['Security','DLP','Tenancy'], repo: 'https://github.com/Ram786/data-boundary-gateway', demo: '#' },
-  { title: 'AI E-commerce Assistant', description: 'Next.js storefront + Node APIs + AI copilot (RAG + tools: inventory, orders) with OTel, SLOs, and cost controls.', highlights: ['Tool-use router','Eval harness','Latency/cost targets'], tags: ['AI','Next.js','SLO','Cost'], repo: 'https://github.com/Ram786/ai-commerce', demo: '#' },
+  { title: 'RAG Service (E2E)', description: 'Production-ready retrieval-augmented generation over product docs with evals, caching, and cost/latency panels.', highlights: ['pgvector + hybrid search', 'RAG evals pipeline', 'Prompt-injection tests', 'OTel traces end-to-end'], tags: ['AI', 'RAG', 'pgvector', 'OpenTelemetry', 'Security'], repo: 'https://github.com/Ram786/rag-service', demo: '#' },
+  { title: 'AI Guardrails Lab', description: 'OWASP LLM Top-10 demo with toggleable mitigations: injection isolation, output validation, PII redaction.', highlights: ['Red teaming harness', 'Policy & content filters', 'Audit logs'], tags: ['LLM Security', 'OWASP', 'Policies'], repo: 'https://github.com/Ram786', demo: '#' },
+  { title: 'Order Orchestrator (Idempotent)', description: 'EventBridge + Step Functions + SQS orchestration for preorder workflow with idempotency, retries, DLQ, and circuit breaker.', highlights: ['Exactly-once-like semantics', 'Compensation steps', 'Chaos tests'], tags: ['AWS', 'EventBridge', 'StepFunctions', 'Resilience'], repo: 'https://github.com/Ram786/order-orchestrator', demo: '#' },
+  { title: 'Observability Golden Path', description: 'Drop-in template wiring logs, metrics, and traces across Next.js + Node + DB. One golden dashboard per service.', highlights: ['p95/p99 SLOs', 'Trace-based alerts', 'Service map'], tags: ['OpenTelemetry', 'Grafana', 'SLO'], repo: 'https://github.com/Ram786/otel-starter', demo: '#' },
+  { title: 'IDP Service Template', description: 'Create-a-service generator with CI/CD, Terraform modules, SLOs, security checks, and cost budgets by default.', highlights: ['Backstage catalog', 'Golden paths', 'Policy as code'], tags: ['Platform', 'Terraform', 'Backstage', 'CI/CD'], repo: 'https://github.com/Ram786/idp-template', demo: '#' },
+  { title: 'FinOps Scorecard', description: 'Unit economics for services: request-level cost (tokens + infra), autoscaling, and Savings Plans recommendations.', highlights: ['Right-sizing', 'Load tests (k6)', 'Waste reduction'], tags: ['FinOps', 'k6', 'Autoscaling'], repo: 'https://github.com/Ram786/finops-scorecard', demo: '#' },
+  { title: 'Feature Flags & Experiments', description: 'Multi-tenant feature flag service with SDK, audit trail, and staged rollouts/canaries for safe experimentation.', highlights: ['Global cache', 'Rollout policies', 'Tenancy'], tags: ['Platform', 'Flags', 'Experiments'], repo: 'https://github.com/Ram786/flags', demo: '#' },
+  { title: 'Search-at-Scale', description: 'Hybrid semantic + BM25 search across ~1M synthetic docs with sharding, query routing, and warm caches.', highlights: ['Consistent hashing', 'Shard balancer', 'Perf budgets'], tags: ['Search', 'Sharding', 'Scaling'], repo: 'https://github.com/Ram786/search-at-scale', demo: '#' },
+  { title: 'Secure Data Boundary Gateway', description: 'Upload -> scan (DLP/AV) -> store -> signed URLs with PII redaction and strict tenancy boundaries.', highlights: ['Least-privilege IAM', 'Egress controls', 'Audit trails'], tags: ['Security', 'DLP', 'Tenancy'], repo: 'https://github.com/Ram786/data-boundary-gateway', demo: '#' },
+  { title: 'AI E-commerce Assistant', description: 'Next.js storefront + Node APIs + AI copilot (RAG + tools: inventory, orders) with OTel, SLOs, and cost controls.', highlights: ['Tool-use router', 'Eval harness', 'Latency/cost targets'], tags: ['AI', 'Next.js', 'SLO', 'Cost'], repo: 'https://github.com/Ram786/ai-commerce', demo: '#' },
 ];
 
 export default function Page() {
@@ -158,9 +160,9 @@ export default function Page() {
         <div className="border-y py-4 bg-white/40 dark:bg-white/5 backdrop-blur">
           <div className="mx-auto max-w-7xl overflow-hidden">
             <div className="marquee">
-              {[ 'RAG','Prompt Router','Guardrails','OpenTelemetry','SLOs','Terraform','CDK','SQS/SNS','EventBridge','Step Functions','pgvector','Feature Flags','FinOps','Grafana','k6','Playwright','Backstage' ]
-                .concat([ 'RAG','Prompt Router','Guardrails','OpenTelemetry','SLOs','Terraform','CDK','SQS/SNS','EventBridge','Step Functions','pgvector','Feature Flags','FinOps','Grafana','k6','Playwright','Backstage' ])
-                .map((t,i)=>(<span key={i} className="mx-4 text-sm opacity-80">• {t}</span>))}
+              {['RAG', 'Prompt Router', 'Guardrails', 'OpenTelemetry', 'SLOs', 'Terraform', 'CDK', 'SQS/SNS', 'EventBridge', 'Step Functions', 'pgvector', 'Feature Flags', 'FinOps', 'Grafana', 'k6', 'Playwright', 'Backstage']
+                .concat(['RAG', 'Prompt Router', 'Guardrails', 'OpenTelemetry', 'SLOs', 'Terraform', 'CDK', 'SQS/SNS', 'EventBridge', 'Step Functions', 'pgvector', 'Feature Flags', 'FinOps', 'Grafana', 'k6', 'Playwright', 'Backstage'])
+                .map((t, i) => (<span key={i} className="mx-4 text-sm opacity-80">• {t}</span>))}
             </div>
           </div>
         </div>
@@ -168,17 +170,22 @@ export default function Page() {
 
       <Section id="skills" title="Core Skills & Stack" subtitle="Full-stack + AI + platform: what I ship with every project">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <Card title="AI Application Engineering"><div className="flex flex-wrap gap-2">{['RAG','Eval Harness','Prompt Router','Guardrails','Vector Search','Streaming'].map((t) => (<Badge key={t}>{t}</Badge>))}</div></Card>
-          <Card title="Platform / DX"><div className="flex flex-wrap gap-2">{['Backstage','IDP','Golden Paths','CI/CD','Feature Flags'].map((t) => (<Badge key={t}>{t}</Badge>))}</div></Card>
-          <Card title="Observability & SLOs"><div className="flex flex-wrap gap-2">{['OpenTelemetry','Grafana','p95/p99','Error Budgets','Tracing'].map((t) => (<Badge key={t}>{t}</Badge>))}</div></Card>
-          <Card title="Security"><div className="flex flex-wrap gap-2">{['OWASP LLM','PII Redaction','Tenancy','Tokenization','Audit Trails'].map((t) => (<Badge key={t}>{t}</Badge>))}</div></Card>
-          <Card title="Cloud & Infra"><div className="flex flex-wrap gap-2">{['AWS','Terraform','CDK','SQS/SNS','EventBridge','Step Functions'].map((t) => (<Badge key={t}>{t}</Badge>))}</div></Card>
-          <Card title="Data & Stores"><div className="flex flex-wrap gap-2">{['Postgres','pgvector','DynamoDB','Redis','S3'].map((t) => (<Badge key={t}>{t}</Badge>))}</div></Card>
+          <Card title="AI Application Engineering"><div className="flex flex-wrap gap-2">{['RAG', 'Eval Harness', 'Prompt Router', 'Guardrails', 'Vector Search', 'Streaming'].map((t) => (<Badge key={t}>{t}</Badge>))}</div></Card>
+          <Card title="Platform / DX"><div className="flex flex-wrap gap-2">{['Backstage', 'IDP', 'Golden Paths', 'CI/CD', 'Feature Flags'].map((t) => (<Badge key={t}>{t}</Badge>))}</div></Card>
+          <Card title="Observability & SLOs"><div className="flex flex-wrap gap-2">{['OpenTelemetry', 'Grafana', 'p95/p99', 'Error Budgets', 'Tracing'].map((t) => (<Badge key={t}>{t}</Badge>))}</div></Card>
+          <Card title="Security"><div className="flex flex-wrap gap-2">{['OWASP LLM', 'PII Redaction', 'Tenancy', 'Tokenization', 'Audit Trails'].map((t) => (<Badge key={t}>{t}</Badge>))}</div></Card>
+          <Card title="Cloud & Infra"><div className="flex flex-wrap gap-2">{['AWS', 'Terraform', 'CDK', 'SQS/SNS', 'EventBridge', 'Step Functions'].map((t) => (<Badge key={t}>{t}</Badge>))}</div></Card>
+          <Card title="Data & Stores"><div className="flex flex-wrap gap-2">{['Postgres', 'pgvector', 'DynamoDB', 'Redis', 'S3'].map((t) => (<Badge key={t}>{t}</Badge>))}</div></Card>
         </div>
       </Section>
 
       {/* Full-Stack Skill Map */}
-      <Section id="fullstack" title="Full-Stack Skill Map" subtitle="Strengths across the stack with real production use">
+      <Section
+        id="fullstack"
+        title="Full-Stack Skill Map"
+        subtitle={<span className="italic">Strengths across the stack with real production use</span>}
+      >
+
         <div className="grid md:grid-cols-2 gap-6">
           <Card title="Front-End">
             <ul className="list-disc list-inside text-sm space-y-1">
@@ -223,7 +230,12 @@ export default function Page() {
       </Section>
 
       {/* Project Highlights */}
-      <Section id="highlights" title="Project Highlights" subtitle="A taste of outcomes and trade-offs from recent work">
+      <Section
+        id="highlights"
+        title="Project Highlights"
+        subtitle={<span className="italic">A taste of outcomes and trade-offs from recent work</span>}
+      >
+
         <div className="grid md:grid-cols-2 gap-6">
           <Card title="Consumer Apps at Scale">
             <ul className="list-disc list-inside text-sm space-y-1">
@@ -257,7 +269,12 @@ export default function Page() {
       </Section>
 
       {/* Projects */}
-      <Section id="projects" title="Projects" subtitle="Interactive cards with motion & tilt">
+      <Section
+        id="projects"
+        title="Projects"
+        subtitle={<span className="italic">Interactive cards with motion &amp; tilt</span>}
+      >
+
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
           {projects.map((p) => (
             <motion.div key={p.title} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.35 }}>
@@ -284,7 +301,12 @@ export default function Page() {
       </Section>
 
       {/* Metrics */}
-      <Section id="metrics" title="Impact Metrics" subtitle="What I optimize and report for every system I lead">
+      <Section
+        id="metrics"
+        title="Impact Metrics"
+        subtitle={<span className="italic">What I optimize and report for every system I lead</span>}
+      >
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <Stat icon={Gauge} label="p95 latency" value="< 250 ms across core APIs" />
           <Stat icon={Shield} label="security findings" value="0 critical / 0 high" />
@@ -296,7 +318,12 @@ export default function Page() {
       </Section>
 
       {/* OSS */}
-      <Section id="oss" title="Open Source & Community" subtitle="Small, consistent contributions where I build and learn">
+      <Section
+        id="oss"
+        title="Open Source & Community"
+        subtitle={<span className="italic">Small, consistent contributions where I build and learn</span>}
+      >
+
         <div className="grid md:grid-cols-2 gap-6">
           <Card title="OpenTelemetry"><p className="text-sm text-slate-600 dark:text-slate-300">Plugin samples + docs improvements; trace context propagation utilities for Node/Next.</p></Card>
           <Card title="Backstage / IDP"><p className="text-sm text-slate-600 dark:text-slate-300">Templates and example golden paths for Node services with SLOs and budgets.</p></Card>
@@ -304,7 +331,12 @@ export default function Page() {
       </Section>
 
       {/* Case Studies */}
-      <Section id="case-studies" title="Case Studies (1-minute reads)" subtitle="Trade-offs with measurable results">
+      <Section
+        id="case-studies"
+        title="Case Studies (1-minute reads)"
+        subtitle={<span className="italic">Trade-offs with measurable results</span>}
+      >
+
         <div className="grid md:grid-cols-2 gap-6">
           <Card title="Consistency vs Availability (Payments)"><ul className="list-disc list-inside text-sm space-y-1">
             <li><strong>Problem:</strong> Duplicate payment attempts under retry storms.</li>
@@ -320,7 +352,12 @@ export default function Page() {
       </Section>
 
       {/* Contact */}
-      <Section id="contact" title="Let's build something" subtitle="I am open to Lead/Principal roles and consulting">
+      <Section
+        id="contact"
+        title="Let's build something"
+        subtitle={<span className="italic">I am open to Lead/Principal roles and consulting</span>}
+      >
+
         <div className="flex flex-wrap items-center gap-3">
           <a href="mailto:ramgosaipur@gmail.com?subject=Let%27s%20talk%20about%20Applied%20AI%20Platform%20roles" className="inline-flex items-center gap-2 rounded-xl bg-black text-white dark:bg-white dark:text-black px-4 py-2 text-sm font-medium"><Mail className="h-4 w-4" /> Email Me</a>
           <a href="https://github.com/ram786" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-medium"><Github className="h-4 w-4" /> GitHub</a>

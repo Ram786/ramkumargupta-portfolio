@@ -571,9 +571,9 @@ video {
 .mt-6 {
   margin-top: 1.5rem;
 }
-.mt-auto {
+/* .mt-auto {
   margin-top: auto;
-}
+} */
 .block {
   display: block;
 }
@@ -907,6 +907,9 @@ video {
 }
 .uppercase {
   text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
 }
 .leading-tight {
   line-height: 1.25;
