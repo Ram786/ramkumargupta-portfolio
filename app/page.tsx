@@ -168,7 +168,12 @@ export default function Page() {
         </div>
       </section>
 
-      <Section id="skills" title="Core Skills & Stack" subtitle="Full-stack + AI + platform: what I ship with every project">
+      <Section
+        id="skills"
+        title="Core Skills & Stack"
+        subtitle={<span className="italic">Full-stack + AI + platform: what I ship with every project</span>}
+      >
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <Card title="AI Application Engineering"><div className="flex flex-wrap gap-2">{['RAG', 'Eval Harness', 'Prompt Router', 'Guardrails', 'Vector Search', 'Streaming'].map((t) => (<Badge key={t}>{t}</Badge>))}</div></Card>
           <Card title="Platform / DX"><div className="flex flex-wrap gap-2">{['Backstage', 'IDP', 'Golden Paths', 'CI/CD', 'Feature Flags'].map((t) => (<Badge key={t}>{t}</Badge>))}</div></Card>
